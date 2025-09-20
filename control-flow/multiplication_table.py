@@ -2,7 +2,7 @@
 
 
 #prompt the user for the input
-number = int(input("Enter a number to see its multiplication tabkle:  "))
+number = int(input("Enter a number to see its multiplication table: "))
 
 # Use a for loop to print the multication table from 1 to 10
 

@@ -6,16 +6,16 @@ class Book:
     def __str__(self) -> str:
         return f"{self.title} by {self.author}"
     def __repr__(self):
-        return f"Book({self.title!r}, {self.author})"
-class Ebook(Book):
+        return f"Book({self.title!r}, {self.author!r})"
+class EBook(Book):
     #Derived class representing an ebook with a file size(int ,e.g KB).
     def __init__(self, title: str, author: str, file_size:int) -> None:
         super().__init__(title, author)
         self.file_size = file_size
     def __str__ (self) -> str:
-        return f"Ebook: {self.title} by self.author ({self.file_size: } KB)"
+        return f"EBook: {self.title} by {self.author} ({self.file_size} KB)"
     def __repr__(self) ->str:
-        return f"Ebook({self.title!r}, {self.author!r}, {self.file_size})"
+        return f"EBook({self.title!r}, {self.author!r}, {self.file_size})"
 class PrintBook(Book):
     #Derived class representing a print book with a page  count
     def __init__(self, title: str, author: str, page_count: int) -> None:
@@ -23,7 +23,7 @@ class PrintBook(Book):
         self.page_count = page_count
     def __str__(self) -> str:
         return f"PrintBook: {self.title} by {self.author} - {self.page_count} pages"
-    def __rep__(self) -> str:
+    def __repr__(self) -> str:
         return f"PrintBook({self.title!r}, {self.author!r}, {self.page_count})"
 
 class Library:
@@ -34,7 +34,7 @@ class Library:
         #Add book/subclass instance to the library
         if not isinstance(book, Book):
             raise TypeError("add_book expects a Book (or sublass) instance")
-        self.book.append(book)
+        self.books.append(book)
     def list_books(self) -> None:
         #Print details of each book in the library.
         if not self.books:

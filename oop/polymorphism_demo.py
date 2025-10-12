@@ -6,9 +6,9 @@ class Shape:
         #This ensures subclasses must override this method
         raise NotImplementedError("Subclasses must implement the area() method.")
     
-class Rectangle:
+class Rectangle(shape):
     def __init__(self, length, width):
-        self.lenght = length
+        self.length = length
         self.width = width
 
     #Override area() method 
